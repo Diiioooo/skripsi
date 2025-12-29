@@ -86,30 +86,31 @@ text = st.text_area("Masukkan ulasan:")
 if st.button("Prediksi"):
     if not text.strip():
         st.warning("Teks kosong")
-        st.stop()
+    else: 
 
-    model, w2v, word_index, max_len = load_pipeline(mode, scenario)
-
-    tokens = preprocess_text(text)
-
-    # Ambil token yang dikenal
-    valid_tokens = [t for t in tokens if t in word_index]
-
-    if len(valid_tokens) == 0:
-        st.warning("Teks terlalu jauh dari data latih")
-        st.stop()
-
-    # Token -> index TRAINING
-    seq = [word_index[t] for t in valid_tokens]
-
-    X = pad_sequences([seq], maxlen=max_len, padding="post")
-
-    pred = model.predict(X, verbose=0)[0]
-    label = np.argmax(pred)
-
-    st.success(f"Hasil Prediksi: **{LABELS[label]}**")
-    st.json({
-        "Negatif": float(pred[0]),
-        "Netral": float(pred[1]),
-        "Positif": float(pred[2])
-    })
+            model, w2v, word_index, max_len = load_pipeline(mode, scenario)
+        
+            tokens = preprocess_text(text)
+        
+            # Ambil token yang dikenal
+            valid_tokens = [t for t in tokens if t in word_index]
+        
+            if len(valid_tokens) == 0:
+                st.warning("Teks terlalu jauh dari data latih")
+                st.stop()
+        
+            # Token -> index TRAINING
+            seq = [word_index[t] for t in valid_tokens]
+        
+            X = pad_sequences([seq], maxlen=max_len, padding="post")
+        
+            pred = model.predict(X, verbose=0)[0]
+            label = np.argmax(pred)
+        
+            st.success(f"Hasil Prediksi: **{LABELS[label]}**")
+            st.json({
+                "Negatif": float(pred[0]),
+                "Netral": float(pred[1]),
+                "Positif": float(pred[2])
+            })
+        
