@@ -43,7 +43,7 @@ def load_pipeline(mode, scenario):
         max_len = pickle.load(f)
 
     # WORD INDEX
-    word_index_path = "word_index_s2w2.pkl" if mode == "non_smote" else "word_index_w2vsmotes2.pkl"
+    word_index_path = "word_index_s2w2.pkl" if mode == "non_smote" else "word_index_w2vsmoteS2.pkl"
     with open(os.path.join(base_path, word_index_path), "rb") as f:
         word_index = pickle.load(f)
 
@@ -107,3 +107,4 @@ if st.button("Prediksi"):
                 "Netral": float(pred[1]),
                 "Positif": float(pred[2])
             })
+
