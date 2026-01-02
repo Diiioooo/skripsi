@@ -57,12 +57,7 @@ def preprocess_text(text):
 
     tokens = text.split()
 
-    stopwords = {
-        "yang","dan","di","ke","dari","ini","itu","saya","aku",
-        "nya","untuk","dengan","aja","kok","dong","banget"
-    }
-
-    tokens = [t for t in tokens if t not in stopwords and len(t) > 2]
+    tokens = [t for t in tokens if  len(t) > 2]
     return tokens
 
 # UI
@@ -107,4 +102,5 @@ if st.button("Prediksi"):
                 "Netral": float(pred[1]),
                 "Positif": float(pred[2])
             })
+
 
