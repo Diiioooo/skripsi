@@ -11,6 +11,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # LABEL
 LABELS = ["Negatif 😡", "Netral 😐", "Positif 😊"]
+SCENARIO_NON_SMOTE = ["Default", "A", "B", "D", "E"]
+SCENARIO_SMOTE = ["Default", "B", "C", "D", "E"]
 
 st.set_page_config(page_title="Analisis Sentimen LSTM", layout="centered")
 
@@ -69,10 +71,17 @@ mode_ui = st.selectbox("Dataset", ["Non-SMOTE", "SMOTE"])
 mode = "non_smote" if mode_ui == "Non-SMOTE" else "smote"
 
 # Pilih skenario
-scenario = st.selectbox(
-    "Skenario Model",
-    ["Default", "A", "B", "C", "D", "E"]
-)
+if mode == "non_smote":
+    scenario = st.selectbox(
+        "Skenario Model (Non-SMOTE)",
+        SCENARIO_NON_SMOTE
+    )
+else:
+    scenario = st.selectbox(
+        "Skenario Model (SMOTE)",
+        SCENARIO_SMOTE
+    )
+
 
 # Input teks
 text = st.text_area("Masukkan ulasan:")
@@ -102,5 +111,6 @@ if st.button("Prediksi"):
                 "Netral": float(pred[1]),
                 "Positif": float(pred[2])
             })
+
 
 
