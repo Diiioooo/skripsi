@@ -11,8 +11,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # LABEL
 LABELS = ["Negatif 😡", "Netral 😐", "Positif 😊"]
-SCENARIO_NON_SMOTE = ["Default", "A", "B","C", "D", "E"]
-SCENARIO_SMOTE = ["Default","A", "B", "C", "D", "E"]
+SCENARIO_NON_SMOTE = ["Default", "A", "D", "E"]
+SCENARIO_SMOTE = ["A", "B", "D", "E"]
 
 st.set_page_config(page_title="Analisis Sentimen LSTM", layout="centered")
 
@@ -111,6 +111,7 @@ if st.button("Prediksi"):
                 "Netral": float(pred[1]),
                 "Positif": float(pred[2])
             })
+
 
 
 
