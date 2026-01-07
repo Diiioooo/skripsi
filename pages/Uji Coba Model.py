@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 # LABEL
-LABELS = ["Negatif 😡", "Netral 😐", "Positif 😊"]
+LABELS = ["Negatif", "Netral", "Positif"]
 SCENARIO_NON_SMOTE = ["Default", "A","C", "D", "E"]
 SCENARIO_SMOTE = ["A", "B", "D", "E"]
 
@@ -63,7 +63,7 @@ def preprocess_text(text):
     return tokens
 
 # UI
-st.title("🔍 Analisis Sentimen Ulasan Jamu Madura")
+st.title("Analisis Sentimen Ulasan Jamu Madura")
 st.caption("LSTM + Word2Vec | SMOTE vs Non-SMOTE")
 
 # Pilih dataset
@@ -111,6 +111,7 @@ if st.button("Prediksi"):
                 "Netral": float(pred[1]),
                 "Positif": float(pred[2])
             })
+
 
 
 
