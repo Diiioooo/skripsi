@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📊 Evaluasi Model LSTM + Word2Vec")
+st.title("Evaluasi Model LSTM + Word2Vec")
 st.caption("Analisis performa model dengan dan tanpa SMOTE")
 
 # PATH
@@ -66,7 +66,7 @@ def show_cm(path):
 
 # DROPDOWN
 mode = st.selectbox(
-    "🔀 Pilih Metode Penyeimbangan Data",
+    "Pilih Dataset",
     ["Non-SMOTE", "SMOTE"]
 )
 
@@ -75,15 +75,15 @@ cfg = PATH[mode]
 data = load_pkl(cfg["default"]) + load_pkl(cfg["skenario"])
 
 # EVALUASI 
-st.header(f"📌 Hasil Evaluasi {mode}")
+st.header(f" Hasil Evaluasi {mode}")
 
 for row in data:
     nama = row.get("skenario", "Default")
 
-    st.subheader(f"🔹 {nama}")
+    st.subheader(f" {nama}")
     show_metrics(row)
 
-    with st.expander("⚙️ Detail Hyperparameter"):
+    with st.expander(" Detail Hyperparameter"):
         show_hyperparam(row)
 
     # Confusion Matrix
@@ -109,7 +109,7 @@ smote_data = (
 
 
 # DIAGRAM PERBANDINGAN
-st.header("📈 Diagram Perbandingan Model")
+st.header("Diagram Perbandingan Model")
 
 compare_mode = st.selectbox(
     "Pilih jenis perbandingan:",
@@ -197,3 +197,4 @@ ax.set_xlabel("Skenario")
 ax.set_title(title)
 
 st.pyplot(fig)
+
