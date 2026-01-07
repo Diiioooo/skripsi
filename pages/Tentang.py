@@ -1,9 +1,9 @@
 import streamlit as st
 
-st.title("📘 Penutup & Kesimpulan")
+st.title("Penutup & Kesimpulan")
 
 st.write("""
-### 🎯 Kesimpulan Penelitian
+### Kesimpulan Penelitian
 
 1. Penelitian ini berhasil menerapkan metode **Long Short-Term Memory (LSTM)** 
    dengan representasi kata **Word2Vec** untuk melakukan analisis sentimen 
@@ -22,7 +22,7 @@ st.write("""
 
 ---
 
-### 🙏 Ucapan Terima Kasih
+### Ucapan
 Terima kasih atas perhatian dan penggunaan sistem ini sebagai media 
 visualisasi dan analisis hasil penelitian skripsi.
 
@@ -33,3 +33,4 @@ Sebagai pengembangan di masa mendatang, penelitian ini dapat diperluas dengan:
 """)
 
 st.info("Gunakan sidebar untuk kembali ke halaman lain pada dashboard.")
+
