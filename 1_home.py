@@ -2,10 +2,10 @@ import streamlit as st
 
 st.set_page_config(page_title="Skripsi DIO – Dashboard", layout="wide")
 
-st.title("📚 Dashboard Penelitian Skripsi")
+st.title(" Dashboard Penelitian Skripsi")
 st.markdown("---")
 
-st.header("🔍 Gambaran Umum Penelitian")
+st.header(" Gambaran Umum Penelitian")
 st.write("""
 Aplikasi ini merupakan dashboard hasil penelitian tugas akhir mengenai  
 **Analisis Sentimen Ulasan Produk Jamu Madura** menggunakan pendekatan 
@@ -18,7 +18,7 @@ Penelitian ini membandingkan performa model berdasarkan:
 - Evaluasi menggunakan **Accuracy, Precision, Recall, dan F1-Score**
 """)
 
-st.subheader("📦 Struktur Pengujian Model")
+st.subheader(" Struktur Pengujian Model")
 st.write("""
 Pengujian dilakukan melalui beberapa skenario konfigurasi model LSTM, yaitu:
 
@@ -30,7 +30,7 @@ Setiap skenario diuji pada dua kondisi data:
 - **SMOTE**
 """)
 
-st.subheader("📈 Halaman yang Tersedia")
+st.subheader(" Halaman yang Tersedia")
 st.write("""
 1. **Hasil Uji Coba**  
    Menampilkan hasil evaluasi seluruh skenario model berupa metrik performa 
@@ -45,3 +45,4 @@ st.write("""
 """)
 
 st.success("Sistem siap digunakan. Silakan pilih halaman dari sidebar.")
+
