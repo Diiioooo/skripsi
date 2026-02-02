@@ -5,7 +5,7 @@ st.set_page_config(page_title="Skripsi DIO – Dashboard", layout="wide")
 st.title(" Dashboard Penelitian Skripsi")
 st.markdown("---")
 
-st.markdown("""
+st.header("""
 **Nama** : Septian Dio Dwinata Hendratno  
 **NIM**  : 210411100026
 """)
@@ -55,4 +55,5 @@ st.write("""
 """)
 
 st.success("Sistem siap digunakan. Silakan pilih halaman dari sidebar.")
+
 
